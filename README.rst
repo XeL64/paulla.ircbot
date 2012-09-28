@@ -19,12 +19,10 @@ paulla.ircbot
  Todo
 
 + twitter sur notre gruiteur
-
  
  Todo
 
 + annoncer les events, confs, afpyros etc
-
  
  Todo
 
@@ -32,3 +30,6 @@ paulla.ircbot
  
  Todo
 
++ Détecter les YAKAFOKON
+
+ Todo
