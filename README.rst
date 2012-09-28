@@ -33,3 +33,7 @@ paulla.ircbot
 + Détecter les YAKAFOKON
 
  Todo
+
+- changer de nom aléatoirement
+ Todo
+
