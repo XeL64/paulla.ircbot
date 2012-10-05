@@ -37,6 +37,7 @@ setup(name='paulla.ircbot',
       install_requires=[
           'setuptools',
           'irckit',
+          'irc',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

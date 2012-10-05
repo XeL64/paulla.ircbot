@@ -1,2 +1,25 @@
+#! /usr/bin/env python
+
+"""
+Simple script to test to irc module.
+"""
+
+
+import irc.bot
+
+class Botanick(irc.bot.SingleServerIRCBot):
+    def __init__(self, channel, nickname, server, port=6667):
+        irc.bot.SingleServerIRCBot.__init__(self, [(server, port)], nickname, nickname)
+        self.channel = channel
+
+    def on_welcome(self, c, e):
+        c.join(self.channel)
+        c.privmsg(self.channel, "Coucou !")
+
+
 def main():
-    print "plop"
+    """Main function."""
+    print(__doc__)
+
+if __name__ == "__main__":
+    main()
