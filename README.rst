@@ -37,3 +37,6 @@ paulla.ircbot
 - changer de nom aléatoirement
  Todo
 
++  Compteur de 'lolitude': au bout de x lol botanik tweete : xxx en est à son énième lol sur le chan boooooooouuuuuuuuhhhhh
+
+ Todo
