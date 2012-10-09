@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*
 
 """
 Simple script to test to irc module.
@@ -14,12 +15,11 @@ class Botanick(irc.bot.SingleServerIRCBot):
 
     def on_welcome(self, c, e):
         c.join(self.channel)
-        c.privmsg(self.channel, "Coucou !")
+        c.privmsg(self.channel, u"solevis mon maître m'a abandonné")
 
 
 def main():
     """Main function."""
-    print(__doc__)
     bot = Botanick()
     bot.start()
     #import pdb; pdb.set_trace()
