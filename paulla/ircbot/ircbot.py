@@ -15,7 +15,9 @@ class Botanick(irc.bot.SingleServerIRCBot):
 
     def on_welcome(self, c, e):
         c.join(self.channel)
-        c.privmsg(self.channel, u"solevis mon maître m'a abandonné")
+        masters = ['solevis', 'Llew', 'Kasba', 'Mika64']
+        for master in masters :
+            c.privmsg(self.channel, u"mon maître %s m'a abandonné" % master)
 
 
 def main():
