@@ -8,7 +8,7 @@ Simple script to test to irc module.
 
 import irc.bot
 
-class Botanick(irc.bot.SingleServerIRCBot):
+class Botanik(irc.bot.SingleServerIRCBot):
     def __init__(self, channel="#paulla", nickname="botanik", server="irc.freenode.net", port=6667):
         irc.bot.SingleServerIRCBot.__init__(self, [(server, port)], nickname, nickname)
         self.channel = channel
@@ -17,14 +17,14 @@ class Botanick(irc.bot.SingleServerIRCBot):
         c.join(self.channel)
         c.privmsg(self.channel, u"cyp c'est pour quand le prochain sprint ?")
         c.privmsg(self.channel, u"cyp j'ai vraiment l'impression de mouler !")
-        masters = ['solevis', 'Llew', 'Kasba', 'Mika64']
-        for master in masters:
-            c.privmsg(self.channel, u"mon maître %s m'a abandonné" % master)
-
+        lost_masters = ['solevis', 'Llew', 'Mika64']
+        for master in lost_masters:
+            c.privmsg(self.channel, u"Mon maître %s m'a abandonné" % master)
+        c.privmsg(self.channel, u"Mon maître Kasba m'a trouvé")
 
 def main():
     """Main function."""
-    bot = Botanick()
+    bot = Botanik()
     bot.start()
     #import pdb; pdb.set_trace()
 
