@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*
 
 """
@@ -12,8 +12,10 @@ class Botanik(irc.bot.SingleServerIRCBot):
     def __init__(self, channel="#paulla", nickname="botanik", server="irc.freenode.net", port=6667):
         irc.bot.SingleServerIRCBot.__init__(self, [(server, port)], nickname, nickname)
         self.channel = channel
+        self.yakafokon = [u'falloir',u'faut',u'il faille',u'faudra',u'fallait',u'il fallût',u'fallu']
 
     def on_welcome(self, c, e):
+        """ Le bot dit bonjour """
         c.join(self.channel)
         c.privmsg(self.channel, u"cyp c'est pour quand le prochain sprint ?")
         c.privmsg(self.channel, u"cyp j'ai vraiment l'impression de mouler !")
@@ -21,6 +23,15 @@ class Botanik(irc.bot.SingleServerIRCBot):
         for master in lost_masters:
             c.privmsg(self.channel, u"Mon maître %s m'a abandonné" % master)
         c.privmsg(self.channel, u"Mon maître Kasba m'a trouvé")
+        
+    def on_pubmsg(self, c, e):
+        """ Le bot écoute ce qui se raconte """
+        message = e.arguments()[0]
+        for terme in self.yakafokon:
+            if terme in message:
+                c.privmsg(self.channel, u"¡¡¡ YAKAFOKON detected !!!")
+                break
+     
 
 def main():
     """Main function."""
